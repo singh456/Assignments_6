@@ -1,0 +1,67 @@
+Create two tables A and B and perform
+a) Right Join
+b) Left Join
+c)Inner Join
+d) Left Join
+e) Intersect
+f) Union 
+g) Union all
+
+Create two tables A and B and perform
+CREATE TABLE A (
+    id INT PRIMARY KEY,
+    name VARCHAR(50)
+);
+
+CREATE TABLE B (
+    id INT PRIMARY KEY,
+    age INT
+);
+
+-- Inserting sample data into Table A
+INSERT INTO A (id, name) VALUES
+(1, 'kuldeep'),
+(2, 'arjun'),
+(3, 'ayush');
+
+-- Inserting sample data into Table B
+INSERT INTO B (id, age) VALUES
+(1, 25),
+(3, 30),
+(4, 22);
+
+a) Right Join
+SELECT A.id, A.name, B.age
+FROM A
+RIGHT JOIN B ON A.id = B.id;
+
+b) Left Join
+SELECT A.id, A.name, B.age
+FROM A
+LEFT JOIN B ON A.id = B.id;
+
+c)Inner Join
+SELECT A.id, A.name, B.age
+FROM A
+INNER JOIN B ON A.id = B.id;
+
+d) Left Join
+SELECT A.id, A.name, B.age
+FROM A
+LEFT JOIN B ON A.id = B.id;
+
+e) Intersect
+SELECT id, name FROM A
+INTERSECT
+SELECT id, name FROM B;
+
+f) Union
+SELECT id, name FROM A
+UNION
+SELECT id, age AS name FROM B;
+
+g) Union All
+SELECT id, name FROM A
+UNION ALL
+SELECT id, age AS name FROM B;
+
